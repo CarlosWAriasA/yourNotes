@@ -1,13 +1,17 @@
 import Header from "./components/Header/Header";
-import NotasList from "./components/Notas/NotasList";
+import NotasList from "./components/Notas/NotesList";
+import { Colors } from "./utils/Colors";
 
 function App() {
   return (
     <div
-      className="flex items-center justify-center min-h-screen h-screen bg-slate-900"
-      style={{ backgroundColor: "#242424" }}
+      className="flex items-center justify-center min-h-screen h-screen"
+      style={{ backgroundColor: Colors.MAIN }}
     >
-      <main className="bg-gray-200 w-4/6 h-full p-2 rounded-sm overflow-hidden">
+      <main
+        className="w-4/6 h-full overflow-hidden"
+        style={{ backgroundColor: Colors.MAIN }}
+      >
         <Header />
         <NotasList />
       </main>

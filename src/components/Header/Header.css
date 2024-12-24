@@ -4,11 +4,12 @@
 
 .custom-placeholder:focus {
   box-shadow: none !important;
-  border-color: transparent !important;
+  border-color: #17a2b8 !important;
 }
 
 .custom-placeholder {
   resize: none;
   overflow: auto;
   color: white;
+  border-color: #444444;
 }

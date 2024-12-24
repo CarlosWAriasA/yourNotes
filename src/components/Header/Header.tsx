@@ -26,8 +26,19 @@ function Header() {
   };
 
   return (
-    <section className="flex justify-center flex-col align-middle items-center ">
-      <h1 className="font-bold text-3xl">yourNotes</h1>
+    <section
+      className="flex justify-center flex-col  text-white p-2"
+      style={{ backgroundColor: Colors.NAVBAR }}
+    >
+      <div className="flex justify-center gap-3 mb-2 ml-2">
+        <img
+          src="./yourNotes.webp"
+          width={40}
+          height={30}
+          className="rounded-lg"
+        />
+        <h1 className="font-bold text-3xl">yourNotes</h1>
+      </div>
       <div className="w-full flex justify-center items-center gap-2">
         <Form.Control
           as={"textarea"}
@@ -38,9 +49,16 @@ function Header() {
           type="text"
           placeholder="Write a note..."
           className="p-2 rounded-lg text-white custom-placeholder flex-grow"
-          style={{ backgroundColor: Colors.MAIN }}
+          style={{
+            backgroundColor: Colors.INPUT_BG,
+            borderColor: Colors.INPUT_BORDER,
+          }}
         />
-        <Button variant="success" className="h-full" style={{ height: "100%" }}>
+        <Button
+          variant="success"
+          className="h-full"
+          style={{ height: "100%", backgroundColor: Colors.BUTTON_BG }}
+        >
           Create
         </Button>
       </div>
