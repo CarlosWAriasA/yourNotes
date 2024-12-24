@@ -1,0 +1,14 @@
+.custom-placeholder::placeholder {
+  color: white;
+}
+
+.custom-placeholder:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.custom-placeholder {
+  resize: none;
+  overflow: auto;
+  color: white;
+}
