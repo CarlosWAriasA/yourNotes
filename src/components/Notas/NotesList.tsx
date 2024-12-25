@@ -38,8 +38,8 @@ function NotasList() {
 
   return (
     <section
-      className="flex flex-col gap-1 overflow-auto h-full p-1"
-      style={{ backgroundColor: Colors.NAVBAR }}
+      className="flex flex-col gap-2 overflow-auto p-1"
+      style={{ backgroundColor: Colors.NAVBAR, maxHeight: "85%" }}
     >
       {notas
         .sort((a, b) => (b.pin ? 1 : 0) - (a.pin ? 1 : 0))
@@ -55,6 +55,7 @@ function NotasList() {
             />
           );
         })}
+      <div style={{ height: "50px" }}></div>
     </section>
   );
 }

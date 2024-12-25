@@ -1,5 +1,5 @@
 .custom-placeholder::placeholder {
-  color: white;
+  color: white !important;
 }
 
 .custom-placeholder:focus {
@@ -12,4 +12,8 @@
   overflow: auto;
   color: white;
   border-color: #444444;
+}
+
+.create-button:hover {
+  background-color: #138496 !important;
 }

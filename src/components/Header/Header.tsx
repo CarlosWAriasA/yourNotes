@@ -56,7 +56,7 @@ function Header() {
         />
         <Button
           variant="success"
-          className="h-full"
+          className="h-full create-button"
           style={{ height: "100%", backgroundColor: Colors.BUTTON_BG }}
         >
           Create
