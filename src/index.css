@@ -18,3 +18,7 @@
 *::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.no-focus-outline:focus {
+  outline: none;
+}

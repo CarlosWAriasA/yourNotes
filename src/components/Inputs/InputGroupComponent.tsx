@@ -1,40 +1,47 @@
 import React from "react";
-import { Form, InputGroup as InputGroupBs } from "react-bootstrap";
+import { Label, TextInput } from "flowbite-react";
 
 interface InputGroupProps {
+  id: string;
   label: string;
-  Icon: React.ComponentType;
+  Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
   placeholder: string;
   type: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  classNameParent?: string;
+  className?: string;
+  classNameLabel?: string;
 }
 
 const InputGroupComponent: React.FC<InputGroupProps> = ({
+  id,
   label,
   Icon,
   placeholder,
   type,
   value,
   onChange,
+  classNameParent,
+  className,
+  classNameLabel,
 }) => {
   return (
-    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-      <Form.Label>{label}</Form.Label>
-      <InputGroupBs className="mb-3">
-        <InputGroupBs.Text id="basic-addon1">
-          <Icon />
-        </InputGroupBs.Text>
-        <Form.Control
-          placeholder={placeholder}
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-          type={type}
-          value={value}
-          onChange={onChange}
-        />
-      </InputGroupBs>
-    </Form.Group>
+    <div className={classNameParent}>
+      <div>
+        <Label htmlFor={id} value={label} className={classNameLabel} />
+      </div>
+      <TextInput
+        value={value}
+        onChange={onChange}
+        id={id}
+        type={type}
+        icon={Icon}
+        placeholder={placeholder}
+        className={className}
+        required
+      />
+    </div>
   );
 };
 

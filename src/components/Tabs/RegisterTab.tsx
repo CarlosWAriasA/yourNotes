@@ -1,9 +1,9 @@
-import { Form } from "react-bootstrap";
 import InputGroupComponent from "../Inputs/InputGroupComponent";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { TbLockPassword } from "react-icons/tb";
 import ButtonComponent from "../Button/ButtonComponent";
 import { useState } from "react";
+import ButtonGoogle from "../Button/ButtonGoogle";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 function RegisterTab() {
   const [newUser, setNewUser] = useState({
@@ -13,10 +13,11 @@ function RegisterTab() {
   });
 
   return (
-    <Form>
+    <form>
       <InputGroupComponent
+        id="email"
         label="Email Address"
-        Icon={() => <MdOutlineMailOutline />}
+        Icon={() => <MdOutlineMailOutline size={20} />}
         placeholder="Email"
         type="email"
         value={newUser.email}
@@ -28,8 +29,10 @@ function RegisterTab() {
         }}
       />
       <InputGroupComponent
+        id="password"
         label="Password"
-        Icon={() => <TbLockPassword />}
+        Icon={() => <RiLockPasswordFill size={20} />}
+        classNameParent="mt-2"
         placeholder="Password"
         type="password"
         value={newUser.password}
@@ -41,8 +44,10 @@ function RegisterTab() {
         }}
       />
       <InputGroupComponent
+        id="confirmPassword"
         label="Confirm Password"
-        Icon={() => <TbLockPassword />}
+        classNameParent="mt-2"
+        Icon={() => <RiLockPasswordFill size={20} />}
         placeholder="Confirm Password"
         type="password"
         value={newUser.confirmPassword}
@@ -53,8 +58,10 @@ function RegisterTab() {
           }));
         }}
       />
-      <ButtonComponent label="Register" className="w-full" />
-    </Form>
+      <ButtonComponent label="Register" className="w-full mt-3" />
+      <p className="text-center mt-2">Or</p>
+      <ButtonGoogle />
+    </form>
   );
 }
 

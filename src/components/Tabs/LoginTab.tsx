@@ -1,18 +1,20 @@
-import { Form } from "react-bootstrap";
 import InputGroupComponent from "../Inputs/InputGroupComponent";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { TbLockPassword } from "react-icons/tb";
+import { RiLockPasswordFill } from "react-icons/ri";
 import ButtonComponent from "../Button/ButtonComponent";
 import { useState } from "react";
+import ButtonGoogle from "../Button/ButtonGoogle";
 
 function LoginTab() {
   const [user, setUser] = useState({ email: "", password: "" });
   return (
-    <Form>
+    <form>
       <InputGroupComponent
+        id="email"
         label="Email Address"
-        Icon={() => <MdOutlineMailOutline />}
-        placeholder="Email"
+        classNameLabel="text-white"
+        Icon={() => <MdOutlineMailOutline size={20} />}
+        placeholder="test@gmail.com"
         type="email"
         value={user.email}
         onChange={(e) => {
@@ -23,8 +25,11 @@ function LoginTab() {
         }}
       />
       <InputGroupComponent
+        id="password"
         label="Password"
-        Icon={() => <TbLockPassword />}
+        Icon={() => <RiLockPasswordFill size={20} />}
+        classNameParent="mt-2"
+        classNameLabel="text-white"
         placeholder="Password"
         type="password"
         value={user.password}
@@ -35,8 +40,10 @@ function LoginTab() {
           }));
         }}
       />
-      <ButtonComponent label="Log in" className="w-full" />
-    </Form>
+      <ButtonComponent label="Log in" className="w-full mt-3" />
+      <p className="text-center mt-2">Or</p>
+      <ButtonGoogle />
+    </form>
   );
 }
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
 import { Colors } from "../../utils/Colors";
 import "./Header.css";
+import { Textarea, Button } from "flowbite-react";
 
 function Header() {
   const [note, setNote] = useState("");
@@ -40,13 +40,11 @@ function Header() {
         <h1 className="font-bold text-3xl">yourNotes</h1>
       </div>
       <div className="w-full flex justify-center items-center gap-2">
-        <Form.Control
-          as={"textarea"}
+        <Textarea
           rows={rows}
           value={note}
           onChange={(e) => setNote(e.target.value)}
           onKeyDown={handleKeyDown}
-          type="text"
           placeholder="Write a note..."
           className="p-2 rounded-lg text-white custom-placeholder flex-grow"
           style={{
@@ -55,7 +53,6 @@ function Header() {
           }}
         />
         <Button
-          variant="success"
           className="h-full create-button"
           style={{ height: "100%", backgroundColor: Colors.BUTTON_BG }}
         >

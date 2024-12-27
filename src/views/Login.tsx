@@ -1,12 +1,9 @@
 import { Colors } from "../utils/Colors";
-import { Tab, Tabs } from "react-bootstrap";
-import { useState } from "react";
+import { Tabs } from "flowbite-react";
 import LoginTab from "../components/Tabs/LoginTab";
 import RegisterTab from "../components/Tabs/RegisterTab";
 
 function Login() {
-  const [key, setKey] = useState("login");
-
   return (
     <main
       className="rounded-md text-white p-3 pt-3 overflow-hidden"
@@ -25,19 +22,13 @@ function Login() {
         />
         <h1 className="font-bold text-3xl">yourNotes</h1>
       </div>
-      <Tabs
-        id="controlled-tab-example"
-        activeKey={key}
-        onSelect={(k) => setKey(k ?? "login")}
-        className="mb-3 mt-3"
-        fill
-      >
-        <Tab eventKey="login" title="Login">
+      <Tabs aria-label="Default tabs" variant="underline">
+        <Tabs.Item active title="Login" className="no-focus-outline">
           <LoginTab />
-        </Tab>
-        <Tab eventKey="register" title="Register">
+        </Tabs.Item>
+        <Tabs.Item title="Register">
           <RegisterTab />
-        </Tab>
+        </Tabs.Item>
       </Tabs>
     </main>
   );
